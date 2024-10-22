@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "How we develop MotionWise"
+version = "0.1.0"
+description = "This is a high level description of the processes we want to follow."
+authors = ["Sebastian Caban <sebastian.caban@tttech.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+sphinx = "*"
+myst-parser ="*"
+sphinx_copybutton = "*"
+sphinx_design = "*"
+sphinx-inline-tabs = "*"
+sphinx_togglebutton = "*"
+sphinx_tippy = "*"
+sphinxcontrib-plantuml = "0.30"
+line-profiler-pycharm = "1.2.0"
+
+furo = "*"
+livereload ="*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
