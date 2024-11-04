@@ -3,5 +3,6 @@
 /doc-template/
 /doc/build/
 
-/How we develop MotionWise.epub
 /How we develop MotionWise (public).epub
+
+/poetry.lock
