@@ -16,29 +16,13 @@ version = '1.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    # Sphinx's own extensions
-    # "sphinx.ext.extlinks",
-    # "sphinx.ext.intersphinx",
-    # "sphinx.ext.mathjax",
-    # "sphinx.ext.todo",
-    # "sphinx.ext.viewcode",
-    # External stuff
     "myst_parser",
     "sphinx_copybutton",
-    # "sphinx_design",  # https://sphinx-design.readthedocs.io/en/latest/
+    "sphinx_design",  # https://sphinx-design.readthedocs.io/en/latest/
     # "sphinx_inline_tabs",
-    # "sphinx_togglebutton",
-    #" sphinx_tippy",
-    #"sphinx.ext.autodoc",
+    "sphinx_togglebutton",
+    # "sphinx_tippy",
 ]
-
-html_last_updated_fmt = '%B %d, %Y'
-html_show_copyright = False
-html_show_sphinx = False
-
-html_theme_options = {
-    "source_edit_link": "https://git.tttech.com/projects/CONTX/repos/prefect-bi-etl/browse/doc/{filename}",
-}
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -53,18 +37,25 @@ epub_theme_options = {"relbar1" : True, "footer": True}
 epub_title = 'Title MotionWise'
 epub_copyright = 'TTTech Auto'
 epub_description = 'Desc MotionWise'
-epub_cover = ('_static/cover.png', '')
+epub_cover = ('_static/cover.jpg', '')
 epub_show_urls = 'no'
-
-
-
-# epub_show_urls = 'footnote'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "furo"
-html_theme_options = {}
+
 html_title = "MotionWise"
 html_short_title = "MotionWise"
 html_static_path = ['_static']
+
+html_last_updated_fmt = '%B %d, %Y'
+html_show_copyright = False
+html_show_sphinx = False
+
+html_theme_options = {
+    "source_edit_link": "https://git.tttech.com/projects/TRUNK/repos/0042-how-we-want-to-develop-motionwise/browse/doc/source/{filename}?useDefaultHandler=true",
+    "source_view_link": "https://git.tttech.com/projects/TRUNK/repos/0042-how-we-want-to-develop-motionwise/raw/doc/source/{filename}",
+}
+
+html_css_files = ["custom.css"] # "tippy.css"

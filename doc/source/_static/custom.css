@@ -1,0 +1,26 @@
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.content {
+    width: 30em;
+}
+
+/* Patch to center text */
+@media (min-width: 768px) {
+    button.toggle-button.toggle-button-hidden:before {
+        content: attr(data-toggle-hint);
+        font-size: .8em;
+        align-self: center;
+        vertical-align: 0.6em;
+    }
+}

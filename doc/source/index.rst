@@ -1,6 +1,5 @@
-This document does not include internal or confidential
-information on purpose. Feel free to read it in .epub format.
-
+.. include:: home.md
+   :parser: myst_parser.sphinx_
 
 Table of contents
 =================
@@ -10,8 +9,8 @@ Table of contents
 
    Welcome to software engineering<01_welcome.md>
    We version control everything in one repo<02_version_control.md>
-   We continuously develop at the head of main.<00_todo.md>
-   We agree as a team to never break main.<00_todo.md>
+   We continuously develop at the head of main.<03_develop_at_head.md>
+   We agree as a team to never break main.<04_never_break_main.md>
    If we cannot fix main in 10min: revert!<00_todo.md>
    We build before merge.<00_todo.md>
    We make changes in small increments.<00_todo.md>
