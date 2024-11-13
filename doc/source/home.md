@@ -1,5 +1,5 @@
 # How we (want to) develop MotionWise
-![fishy](img/home.jpg)
+![Welcome](img/home.jpg)
 
 Welcome to the high-level guideline 
 we (want to) follow to develop MotionWise continuously
