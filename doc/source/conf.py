@@ -59,3 +59,4 @@ html_theme_options = {
 }
 
 html_css_files = ["custom.css"] # "tippy.css"
+epub_css_files = ["custom_epub.css"]

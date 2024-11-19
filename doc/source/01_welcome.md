@@ -16,7 +16,7 @@ This creates a moving integration target.
 
 Integration is hard. 
 Thus, we tend to avoid it.
-The features we work on get much bigger than they need to be.
+As a result, the code changes we work on get bigger and bigger.
 Meanwhile, the codebase has diverged even more from where it was when we started the feature. 
 The longer we wait, the exponentially worse things get, especially just before the release when we are already in a hurry, as all the others are. 
 
@@ -24,11 +24,11 @@ Still, we can do it.
 We work extra-long shifts. 
 We find shortcuts such as skipping testing or writing no documentation.
 To speed up quality checks, we trick the system. 
-There is always a loophole left open we can exploit.
+There is always a loophole left open that we can exploit.
 This all does not feel right.
 Short-term thinking cannot be good for our company in the long term, can it?
 We feel incredibly uncomfortable, but managers told us we need to deliver to stay in business. 
-Lately, this happens so often that while waiting for our endless builds, we browse other companies’ job offers. 
+Lately, this happens so often that we browse other companies’ job offers while waiting for our endless builds to finish. 
 Fortunately, there are so many cool things about our company that we power through.
 
 So far, so good, but wait!
@@ -38,9 +38,9 @@ We have just heard of this part of the codebase for the first time.
 
 We surrender to our fate. 
 We start the debugger: bug-fixing time!
-If only we could reproduce the bug locally…
+If only we could reproduce the bug locally...
 
-## "Your life does not need to be painful!"
+## "Our life does not need to be painful!"
 
 We are not the first ones to fail. 
 Programmers before us have made the same mistakes again and again. 
@@ -50,12 +50,12 @@ No need to be embarrassed; we are all human.
 
 There is a profound difference between coding and software engineering.
 As Titus Winters, former C++ libraries lead of Google, once said:
-“Software engineering is programming integrated over time and scale.” 
+"Software engineering is programming integrated over time and scale." 
 
 Sure, we all want to master time and scale, but how? 
 There is no one-fits-all recipe for software engineering. 
-The best-practice target-picture for open-source projects with sporadic contributors (the kind of environment you might be most familiar with) is different from the target picture of large enterprise setups with hundreds of full-time employees.
-Still, we do not need to be like Netflix with their microservices or Google with its gigantic mono repo and custom tooling. 
+The best-practice target picture for open-source projects with sporadic contributors (the kind of environment you might be most familiar with) is different from the target picture of large enterprise setups with hundreds of full-time employees.
+Still, we do not need to be like Netflix with its microservices or Google with its gigantic mono repo and custom tooling. 
 
 For MotionWise, we are __300+ full-time developers__. 
 We __trust each other__. This setup differs from open-source development where long-time branching is inevitable and developers need to review code from untrusted, potentially malicious contributors. 
@@ -64,9 +64,9 @@ Our __30+ million lines codebase__ is monolithic and full of legacy.
 Large-scale refactoring across libraries is not uncommon.
 We see this daily when pull requests span several, if not dozens, of repositories.
 
-There is also __no end date__ for our codebase. We will need to support all our customer projects for many more years with new features. Except for maybe L4-Releases (the ones with millions of cars on the road), our customers will not pay for any release branch to be a manually kept up to date. 
+There is also __no end date__ for our codebase. We will need to support all our customer projects with new features for many more years. Except for L4-Releases (the ones with millions of cars on the road), our customers will not pay for any release branch to be manually kept up to date. 
 
-Most of all, in our business, developers change teams occasionally and do not stay for too long. We need a development scheme that is easily learned, easily understood not only by the brightest among us, and easily enforced. In engineering, simple cannot be underestimated. 
+Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood not only by the brightest among us, and easily enforced. In engineering, simplicity cannot be underestimated. 
 
 That being said, there is a well-established industry best practice _for this particular setup_ that has proven to scale and stand the test of time more efficiently than developing large features is isolation on branches:
 **Continuous development at the head of a single repository**. 
@@ -74,16 +74,16 @@ How we want to achieve this will be explained in the chapters below.
 
 In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head). To work, we also always check out our code from main. Thus, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. Obviously, this only works if [we automate the one build](chap_automate_the_one_build) of main and have a [vast amount of high-quality tests](chap_tests). Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). Collaboration with team members happens on main and not on branches. This is why we merge to main often. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), which in turn allows us to [merge at least daily](chap_merge_daily). Sounds too good to be true, but can be achieved [using a build-system that never builds any part of the software twice](chap_build_system) but instead uses the cached result from a prior execution. Such caching can only work well if all build-steps are deterministic (same input - same output) and hermetic (all inputs controlled). Furthermore, [the codebase needs to be decoupled](chap_decouple) into small build-steps with all dependencies being known beforehand. Thus, as always, to win, [we need to educate ourselves](chap_educate) and [invest in architecture](chap_architecture).
 
-Your life does not need to be painful. When using a sophisticated build system, there is no difference anymore if we start the build locally or from the CI in a pull-request: speed and result are the same. There is no need anymore to know any dependency in a 30+ million lines codebase, let the build system and the tests do their job.
+Our life does not need to be painful. When using a sophisticated build system, there is no difference anymore if we start the build locally or from the CI in a pull request: speed and result are the same. There is no need to know any dependency in a 30+ million lines codebase anymore. Let the build system and the tests do their job.
 
-## "It's all about the mindset"
+## "It's all about the mindset."
 
 Unfortunately, introducing continuous development at the head of a single repository cannot be achieved by setting up [some fancy build system from Google](https://bazel.build/) and introducing mandatory, automatically checked rules right before integration. 
 
-Firstly, developers are smart. That is why we hired them in the first place. If they have to trick the system for whatever good or bad reason, they will succeed. Let us take code coverage as example. There is a subtle difference between developers expecting a high level of coverage and managers requiring a high level of coverage. The latter is easily reachable with low quality tests, or taken to the extreme, generating tests. 
+Firstly, developers are smart. That is why we hired them in the first place. They will succeed if they have to trick the system for whatever good or bad reason. Let us take code coverage as an example. There is a subtle difference between developers expecting a high level of coverage and managers requiring a high level of coverage. The latter is easily reachable with low-quality tests, or taken to the extreme, generating tests. 
 
-Secondly, programming is and will always be a tradeoff. Enforcing a clean-code rule such as "a function must not have more than three parameters and none of them should be boolean" will bring us nowhere, still, there is more truth into this idea then you might think. The same holds true for how often you should integrate your code. Should you integrate daily? Or maybe you should integrate every two days as the build takes forever? Or maybe you should integrate now as you just completed a large refactoring? The answer will in most cases be: "It depends"
+Secondly, programming is and will always be a tradeoff. Enforcing a clean-code rule such as "a function must not have more than three parameters and none of them should be boolean" will bring us nowhere. Still, there is more truth to this idea than we might think. The same holds for how often we should integrate our code. Should we integrate daily? Or should we integrate every two days as the build takes forever? Or should we integrate now as we just completed a large refactoring? The answer will in most cases be: "It depends"
 
-Thirdly, we cannot cover any possible situation you will encounter in your daily business with a rule. What to do then? 
+Thirdly, we cannot cover any possible situation we will encounter in our daily business with a rule. What to do then? 
 
-We believe that mindset is more important than strict rules. Remember the assumption from above: We trust each other. This is why in the sections that follow we will focus on mindset and hope that these guiding principles will help you to make the best possible choices in whatever situation you are. 
+We believe that mindset is more important than strict rules. Remember the assumption from above: We trust each other. This is why we will focus on mindset in the sections that follow and hope that these guiding principles will help you to make the best possible choices in whatever situation we are in. 
