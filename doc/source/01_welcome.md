@@ -66,7 +66,9 @@ We see this daily when pull requests span several, if not dozens, of repositorie
 
 There is also __no end date__ for our codebase. We will need to support all our customer projects with new features for many more years. Except for L4-Releases (the ones with millions of cars on the road), our customers will not pay for any release branch to be manually kept up to date. 
 
-Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood not only by the brightest among us, and easily enforced. In engineering, simplicity cannot be underestimated. 
+Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood not only by the brightest among us, and easily enforced. In engineering, simplicity cannot be underestimated.
+
+We should also not employ more than one development schema for personal preferences, customer preferences, or simply because a certain way of working looks easier for one particular use case. What looks promising in the short run, often turns out to not scale well in the long run, especially when people need to switch teams or interact with other teams. 
 
 That being said, there is a well-established industry best practice _for this particular setup_ that has proven to scale and stand the test of time more efficiently than developing large features is isolation on branches:
 **Continuous development at the head of a single repository**. 
