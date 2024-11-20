@@ -16,7 +16,7 @@ This creates a moving integration target.
 
 Integration is hard. 
 Thus, we tend to avoid it.
-As a result, the code changes we work on get bigger and bigger.
+As a result, the code-changes we work on get bigger and bigger.
 Meanwhile, the codebase has diverged even more from where it was when we started the feature. 
 The longer we wait, the exponentially worse things get, especially just before the release when we are already in a hurry, as all the others are. 
 
@@ -33,14 +33,14 @@ Fortunately, there are so many cool things about our company that we power throu
 
 So far, so good, but wait!
 The next day, we receive a call that the piece of code we had carefully designed broke something else at some place far away in the codebase.
-Really? How could we anticipate that code conflict in a codebase of 30+ million lines?
+Really? How could we anticipate that code-conflict in a codebase of 30+ million lines?
 We have just heard of this part of the codebase for the first time. 
 
 We surrender to our fate. 
 We start the debugger: bug-fixing time!
 If only we could reproduce the bug locally...
 
-## "Our life does not need to be painful!"
+## Our life does not need to be painful!
 
 We are not the first ones to fail. 
 Programmers before us have made the same mistakes again and again. 
@@ -61,7 +61,7 @@ For MotionWise, we are __300+ full-time developers__.
 We __trust each other__. This setup differs from open-source development where long-time branching is inevitable and developers need to review code from untrusted, potentially malicious contributors. 
 
 Our __30+ million lines codebase__ is monolithic and full of legacy.
-Large-scale refactoring across libraries is not uncommon.
+Large-scale refactoring across libraries is common.
 We see this daily when pull requests span several, if not dozens, of repositories.
 
 There is also __no end date__ for our codebase. We will need to support all our customer projects with new features for many more years. Except for L4-Releases (the ones with millions of cars on the road), our customers will not pay for any release branch to be manually kept up to date. 
@@ -74,11 +74,17 @@ That being said, there is a well-established industry best practice _for this pa
 **Continuous development at the head of a single repository**. 
 How we want to achieve this will be explained in the chapters below. 
 
-In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head). To work, we also always check out our code from main. Thus, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. Obviously, this only works if [we automate the one build](chap_automate_the_one_build) of main and have a [vast amount of high-quality tests](chap_tests). Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). Collaboration with team members happens on main and not on branches. This is why we merge to main often. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), which in turn allows us to [merge at least daily](chap_merge_daily). Sounds too good to be true, but can be achieved [using a build-system that never builds any part of the software twice](chap_build_system) but instead uses the cached result from a prior execution. Such caching can only work well if all build-steps are deterministic (same input - same output) and hermetic (all inputs controlled). Furthermore, [the codebase needs to be decoupled](chap_decouple) into small build-steps with all dependencies being known beforehand. Thus, as always, to win, [we need to educate ourselves](chap_educate) and [invest in architecture](chap_architecture).
+In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head). To work, we also always check out our code from main. Consequently, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
+
+Obviously, this only works if [we automate the one build](chap_automate_the_one_build) of main and have a [vast amount of high-quality tests](chap_tests). Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
+
+Collaboration with team members happens on main and not on branches. This is why we merge to main often. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), which in turn allows us to [merge at least daily](chap_merge_daily). 
+
+Sounds too good to be true, but can be achieved [using a build-system that never builds any part of the software twice](chap_build_system) but instead uses the cached result from a prior execution. Such caching can only work well if all build-steps are deterministic (same input - same output) and hermetic (all inputs controlled). Furthermore, [the codebase needs to be decoupled](chap_decouple) into small build-steps with all dependencies being known beforehand. Thus, as always, to win, [we need to educate ourselves](chap_educate) and [invest in architecture](chap_architecture).
 
 Our life does not need to be painful. When using a sophisticated build system, there is no difference anymore if we start the build locally or from the CI in a pull request: speed and result are the same. There is no need to know any dependency in a 30+ million lines codebase anymore. Let the build system and the tests do their job.
 
-## "It's all about the mindset."
+## It's all about the mindset.
 
 Unfortunately, introducing continuous development at the head of a single repository cannot be achieved by setting up [some fancy build system from Google](https://bazel.build/) and introducing mandatory, automatically checked rules right before integration. 
 
