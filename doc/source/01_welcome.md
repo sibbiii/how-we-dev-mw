@@ -7,9 +7,9 @@ We press run, and no surprise, the new code works on our machine.
 Therefore, we think we need to follow no procedures when coding.
 
 Being a part of a large company, the next step is to integrate our new code.
-Integrating means "putting" our code into the millions of lines of working code already existing in our codebase.
-To make things even more complicated, our 300+ colleagues also integrate their new code simultaneously.
-The sheer endless amount of external libraries we use, including their own dependencies, is constantly updated. 
+Integrating means "putting" our code into the millions of lines of working code already existing in the company's codebase.
+To make things even more complicated, our mote than 300 colleagues also integrate their new code simultaneously.
+The sheer endless amount of external libraries we use, including their dependencies and the dependencies of their dependencies, is also constantly updated. 
 This creates a moving integration target.
 
 ![Integration](img/1/branches.png)
@@ -17,8 +17,8 @@ This creates a moving integration target.
 Integration is hard. 
 Thus, we tend to avoid it.
 As a result, the code-changes we work on get bigger and bigger.
-Meanwhile, the codebase has diverged even more from where it was when we started the feature. 
-The longer we wait, the exponentially worse things get, especially just before the release when we are already in a hurry, as all the others are. 
+Meanwhile, the codebase has diverged even more from where it was when we started the new feature. 
+The longer we wait, the exponentially worse things get, especially just before a release when we are already in a hurry, as all the others are. 
 
 Still, we can do it. 
 We work extra-long shifts. 
@@ -28,7 +28,7 @@ There is always a loophole left open that we can exploit.
 This all does not feel right.
 Short-term thinking cannot be good for our company in the long term, can it?
 We feel incredibly uncomfortable, but managers told us we need to deliver to stay in business. 
-Lately, this happens so often that we browse other companies’ job offers while waiting for our endless builds to finish. 
+Lately, this happens so often that we browse other companies' job offers while waiting for our endless builds to finish. 
 Fortunately, there are so many cool things about our company that we power through.
 
 So far, so good, but wait!
@@ -57,24 +57,27 @@ There is no one-fits-all recipe for software engineering.
 The best-practice target picture for open-source projects with sporadic contributors (the kind of environment you might be most familiar with) is different from the target picture of large enterprise setups with hundreds of full-time employees.
 Still, we do not need to be like Netflix with its microservices or Google with its gigantic mono repo and custom tooling. 
 
-For MotionWise, we are __300+ full-time developers__. 
+For MotionWise, we are __more than 300 full-time developers__. 
 We __trust each other__. This setup differs from open-source development where long-time branching is inevitable and developers need to review code from untrusted, potentially malicious contributors. 
 
 Our __30+ million lines codebase__ is monolithic and full of legacy.
 Large-scale refactoring across libraries is common.
 We see this daily when pull requests span several, if not dozens, of repositories.
 
-There is also __no end date__ for our codebase. We will need to support all our customer projects with new features for many more years. Except for L4-Releases (the ones with millions of cars on the road), our customers will not pay for any release branch to be manually kept up to date. 
+There is also __no end date__ for our codebase. We will need to support all our customer projects with new features for many more years. Except for ''L4-Releases'' (the ones with millions of cars on the road), our customers will not pay us for keeping any branch up to date. 
+
+Our code must **adhere to regulatory standards such as ISO 26262 and ASPICE** to minimize the risk of failure. This requires very formal requirements documentation and tracing from system design to testing throughout the so-called ''V-Model''. 
 
 Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood not only by the brightest among us, and easily enforced. In engineering, simplicity cannot be underestimated.
 
 We should also not employ more than one development schema for personal preferences, customer preferences, or simply because a certain way of working looks easier for one particular use case. What looks promising in the short run, often turns out to not scale well in the long run, especially when people need to switch teams or interact with other teams. 
 
 That being said, there is a well-established industry best practice _for this particular setup_ that has proven to scale and stand the test of time more efficiently than developing large features is isolation on branches:
-**Continuous development at the head of a single repository**. 
-How we want to achieve this will be explained in the chapters below. 
+**Continuous development at the head of a single repository**.
 
-In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head). To work, we also always check out our code from main. Consequently, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
+How we want to achieve this (new) way of working will be explained in Chapters 2 to Chapter 16: 
+
+In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head) stating with a fresh check-out from main. Consequently, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
 
 Obviously, this only works if [we automate the one build](chap_automate_the_one_build) of main and have a [vast amount of high-quality tests](chap_tests). Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
 
@@ -82,7 +85,9 @@ Collaboration with team members happens on main and not on branches. This is why
 
 Sounds too good to be true, but can be achieved [using a build-system that never builds any part of the software twice](chap_build_system) but instead uses the cached result from a prior execution. Such caching can only work well if all build-steps are deterministic (same input - same output) and hermetic (all inputs controlled). Furthermore, [the codebase needs to be decoupled](chap_decouple) into small build-steps with all dependencies being known beforehand. Thus, as always, to win, [we need to educate ourselves](chap_educate) and [invest in architecture](chap_architecture).
 
-Our life does not need to be painful. When using a sophisticated build system, there is no difference anymore if we start the build locally or from the CI in a pull request: speed and result are the same. There is no need to know any dependency in a 30+ million lines codebase anymore. Let the build system and the tests do their job.
+Our life does not need to be painful! Developing new features and even bug-fixing can be an enjoyable experience in the setup outlined above. The critical game changer is a fast build-system that reports back test results within ten minutes. When using a sophisticated build system, there is no difference anymore if we start the build locally or from the CI in a pull request: speed and result are the same. 
+
+Why ten minutes? Ten minutes is enough time to drink morning coffee and think about the next task instead of all dependencies in a 30+ million lines codebase.
 
 ## It's all about the mindset.
 
@@ -95,3 +100,5 @@ Secondly, programming is and will always be a tradeoff. Enforcing a clean-code r
 Thirdly, we cannot cover any possible situation we will encounter in our daily business with a rule. What to do then? 
 
 We believe that mindset is more important than strict rules. Remember the assumption from above: We trust each other. This is why we will focus on mindset in the sections that follow and hope that these guiding principles will help you to make the best possible choices in whatever situation we are in. 
+
+Changing habits is hard. Changing habits takes a long time. Give it a try. Trust me, it's worth it!

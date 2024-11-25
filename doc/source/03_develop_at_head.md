@@ -1,18 +1,20 @@
 (develop_at_head)=
 # We continuously develop at the head of main.
 
-A significant driver of inefficiency is having to support and align multiple versions of units, components, and tools.
+A significant driver of developer frustration and inefficiency is having to support and align multiple versions of units, components, and tools.
 Versions create an additional dimension of complexity in an environment that is already complex enough.
 
 The de facto standard for versioning is SemVer. SemVer works well on limited scales. However, things get tricky when not thinking about individual dependencies but very large dependency networks at scale over time. See [^myref] for an excellent summary on this topic.
 
 [^myref]: Dependency Management, Titus Winters: [abseil.io/resources/swe-book/html/ch21.html](https://abseil.io/resources/swe-book/html/ch21.html)
 
-Given a huge monolithic codebase in a single repo, our straight-forward 
-best-practice solution to conflicting versions is to have no versions within this repo. 
-Instead, __we merge all changes to the head of main__ (after being tested well enough, [more on that later](chap_build_before_merge)). This style of development is called "Trunk Based Development":
+Given a huge monolithic codebase in a single repository, our straight-forward 
+best-practice solution to conflicting component versions within this repo is to not have versions.
 
-![pic](img/3/img_4.png)
+
+Instead of creating a new version with every change of a component, __we merge all changes to the head of main__ (after being tested well, [more on that later](chap_build_before_merge)). This style of development is called "Trunk Based Development":
+
+![pic](img/3/tbd.png)
 
 ## The one version rule
 
