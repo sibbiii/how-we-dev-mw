@@ -25,7 +25,7 @@ For our daily work, this means:
 
 1. **We store all build inputs in a single Git repository**. This includes code, tests, configuration, and infrastructure.
 2. In case we need large binaries in our workspace or for our build, we serve them via Git-LFS, the build-system, or other standard means from Artifactory. Importantly, linking must be done by hash. 
-3. **We consume well-separated internal and external dependencies with stable and clearly defined interfaces by hash** from Artifactory. For example: Python, Gtest, Docker images, Python PIP packages, or Conan Packages. Linking external input by version, filename, or unique id, tag, or ":latest" is not allowed, as this allows the build inputs to change, making the build potentially non-deterministic. 
+3. **We consume well-separated internal and external dependencies with stable and clearly defined interfaces by hash** from Artifactory. For example: Python, Gtest, Docker images, Python PIP packages, or Conan Packages. Linking external input by version, filename, unique id, tag, or ":latest" is not allowed, as this allows the build inputs to change, making the build potentially non-deterministic. 
 4. We must not consume build inputs from systems such as Jira, MongoDB, Polarion, or any cloud service for reproducibility reasons. If required, a copy (or a link by hash to Artifactory) may be added to Git via pull request.
 5. **We use the standardized WSL** provided by our company to make the complete development environment reproducible.
 
