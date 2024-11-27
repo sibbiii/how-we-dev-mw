@@ -1,6 +1,8 @@
 (develop_at_head)=
 # We continuously develop at the head of main.
 
+
+
 A significant driver of developer frustration and inefficiency is having to support and align multiple versions of units, components, and tools.
 Versions create an additional dimension of complexity in an environment that is already complex enough.
 
