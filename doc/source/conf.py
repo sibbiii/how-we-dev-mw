@@ -11,6 +11,7 @@ project = 'How we develop MotionWise'
 author = 'Sebastian Caban'
 release = '1'
 version = '1.1'
+master_doc = "00_index"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

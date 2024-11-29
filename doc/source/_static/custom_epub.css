@@ -1,7 +1,19 @@
 
 a {
-    color: #000000;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: lightgray;
+}
+a:link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: lightgray;
 }
 a:visited {
-    color: #000000;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: lightgray;
 }

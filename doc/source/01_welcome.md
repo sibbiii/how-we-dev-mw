@@ -8,7 +8,7 @@ Therefore, we think we need to follow no procedures when coding.
 
 Being a part of a large company, the next step is to integrate our new code.
 Integrating means "putting" our code into the millions of lines of working code already existing in the company's codebase.
-To make things even more complicated, our mote than 300 colleagues also integrate their new code simultaneously.
+To make things even more complicated, our more than 300 colleagues also integrate their new code simultaneously.
 The sheer endless amount of external libraries we use, including their dependencies and the dependencies of their dependencies, is also constantly updated. 
 This creates a moving integration target.
 
@@ -40,7 +40,7 @@ We surrender to our fate.
 We start the debugger: bug-fixing time!
 If only we could reproduce the bug locally...
 
-## Our life does not need to be painful!
+## Your life does not need to be painful!
 
 We are not the first ones to fail. 
 Programmers before us have made the same mistakes again and again. 
@@ -52,7 +52,8 @@ There is a profound difference between coding and software engineering.
 As Titus Winters, former C++ libraries lead of Google, once said:
 "Software engineering is programming integrated over time and scale." 
 
-Sure, we all want to master time and scale, but how? 
+Sure, we all want to master time and scale. We all want to do a great job, but how? 
+
 There is no one-fits-all recipe for software engineering. 
 The best-practice target picture for open-source projects with sporadic contributors (the kind of environment you might be most familiar with) is different from the target picture of large enterprise setups with hundreds of full-time employees.
 Still, we do not need to be like Netflix with its microservices or Google with its gigantic mono repo and custom tooling. 
@@ -68,7 +69,7 @@ There is also __no end date__ for our codebase. We will need to support all our 
 
 Our code must **adhere to regulatory standards such as ISO 26262 and ASPICE** to minimize the risk of failure. This requires very formal requirements documentation and tracing from system design to testing throughout the so-called ''V-Model''. 
 
-Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood not only by the brightest among us, and easily enforced. In engineering, simplicity cannot be underestimated.
+Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood, and easily enforced. In engineering, simplicity cannot be underestimated.
 
 We should also not employ more than one development schema for personal preferences, customer preferences, or simply because a certain way of working looks easier for one particular use case. What looks promising in the short run, often turns out to not scale well in the long run, especially when people need to switch teams or interact with other teams. 
 
@@ -77,7 +78,7 @@ That being said, there is a well-established industry best practice _for this pa
 
 How we want to achieve this (new) way of working will be explained in Chapters 2 to Chapter 16: 
 
-In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head) stating with a fresh check-out from main. Consequently, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
+In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head) starting with a fresh check-out from main. Consequently, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
 
 Obviously, this only works if [we automate the one build](chap_automate_the_one_build) of main and have a [vast amount of high-quality tests](chap_tests). Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
 
