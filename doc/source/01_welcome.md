@@ -69,7 +69,7 @@ There is also __no end date__ for our codebase. We will need to support all our 
 
 Our code must **adhere to regulatory standards such as ISO 26262 and ASPICE** to minimize the risk of failure. This requires very formal requirements documentation and tracing from system design to testing throughout the so-called ''V-Model''. 
 
-Most of all, in our business, developers change teams occasionally and do stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood, and easily enforced. In engineering, simplicity cannot be underestimated.
+Most of all, in our business, developers change teams occasionally and stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood, and easily enforced. In engineering, simplicity cannot be underestimated.
 
 We should also not employ more than one development schema for personal preferences, customer preferences, or simply because a certain way of working looks easier for one particular use case. What looks promising in the short run, often turns out to not scale well in the long run, especially when people need to switch teams or interact with other teams. 
 

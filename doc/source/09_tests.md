@@ -1,2 +1,2 @@
 (chap_tests)=
-# We have a vast amount of high-quality tests.
+# We have a vast number of high-quality tests.
