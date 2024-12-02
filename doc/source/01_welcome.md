@@ -69,7 +69,7 @@ There is also __no end date__ for our codebase. We will need to support all our 
 
 Our code must **adhere to regulatory standards such as ISO 26262 and ASPICE** to minimize the risk of failure. This requires very formal requirements documentation and tracing from system design to testing throughout the so-called ''V-Model''. 
 
-Most of all, in our business, developers change teams occasionally and stay only for several years. Thus, we need a development scheme that is easily learned, quickly understood, and easily enforced. In engineering, simplicity cannot be underestimated.
+Most of all, in our business, developers change teams occasionally and stay only for several years. Thus, we need a development scheme that is quickly learned, easily understood, and straightforwardly enforced. In engineering, simplicity cannot be underestimated.
 
 We should also not employ more than one development schema for personal preferences, customer preferences, or simply because a certain way of working looks easier for one particular use case. What looks promising in the short run, often turns out to not scale well in the long run, especially when people need to switch teams or interact with other teams. 
 
@@ -78,11 +78,17 @@ That being said, there is a well-established industry best practice _for this pa
 
 How we want to achieve this (new) way of working will be explained in Chapters 2 to Chapter 16: 
 
-In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). This repository has a special  branch called main. [Newly developed code is always merged with the head of main](develop_at_head) starting with a fresh check-out from main. Consequently, [we agree as a team to never break main](chap_never_break_main). We achieve this by [building and checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
+In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). 
+This repository has a special branch called main. [Newly developed code is always merged with the head of main](develop_at_head) starting with a fresh check-out from main. 
+Consequently, [we agree as a team to never break main](chap_never_break_main). 
+We achieve this by [building, that is, checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
 
-Obviously, this only works if [we automate the one build](chap_automate_the_one_build) of main and have a [vast amount of high-quality tests](chap_tests). Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
+Obviously, this only works if we have a [vast number of high-quality tests](chap_tests). 
+Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
 
-Collaboration with team members happens on main and not on branches. This is why we merge to main often. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), which in turn allows us to [merge at least daily](chap_merge_daily). 
+Fast feedback is key. This is why we [make changes in small increments](chap_small_increments) and merge them to main to see how they integrate with the other code. 
+Collaboration with team members also happens on main and not on branches. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), 
+which in turn allows us to [merge at least daily](chap_merge_daily). 
 
 Sounds too good to be true, but can be achieved [using a build-system that never builds any part of the software twice](chap_build_system) but instead uses the cached result from a prior execution. Such caching can only work well if all build-steps are deterministic (same input - same output) and hermetic (all inputs controlled). Furthermore, [the codebase needs to be decoupled](chap_decouple) into small build-steps with all dependencies being known beforehand. Thus, as always, to win, [we need to educate ourselves](chap_educate) and [invest in architecture](chap_architecture).
 
