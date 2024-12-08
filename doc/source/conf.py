@@ -11,7 +11,7 @@ project = 'How we develop MotionWise'
 author = 'Sebastian Caban'
 release = '1'
 version = '1.1'
-master_doc = "00_index"
+master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -44,7 +44,7 @@ epub_show_urls = 'no'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "furo"
+# html_theme = "furo"
 
 html_title = "MotionWise"
 html_short_title = "MotionWise"
@@ -54,10 +54,10 @@ html_last_updated_fmt = '%B %d, %Y'
 html_show_copyright = False
 html_show_sphinx = False
 
-html_theme_options = {
-    "source_edit_link": "https://git.tttech.com/projects/TRUNK/repos/0042-how-we-want-to-develop-motionwise/browse/doc/source/{filename}?useDefaultHandler=true",
-    "source_view_link": "https://git.tttech.com/projects/TRUNK/repos/0042-how-we-want-to-develop-motionwise/raw/doc/source/{filename}",
-}
+# html_theme_options = {
+#     "source_edit_link": "https://git.tttech.com/projects/TRUNK/repos/0042-how-we-want-to-develop-motionwise/browse/doc/source/{filename}?useDefaultHandler=true",
+#     "source_view_link": "https://git.tttech.com/projects/TRUNK/repos/0042-how-we-want-to-develop-motionwise/raw/doc/source/{filename}",
+# }
 
 html_css_files = ["custom.css"] # "tippy.css"
 epub_css_files = ["custom_epub.css"]

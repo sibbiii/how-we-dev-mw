@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "How we develop MotionWise"
+name = "How we (want to) develop MotionWise"
 version = "0.1.0"
 description = "This is a high level description of the processes we want to follow."
 authors = ["Sebastian Caban <sebastian.caban@tttech.com>"]
@@ -16,7 +16,6 @@ sphinx-inline-tabs = "*"
 sphinx_togglebutton = "*"
 sphinx_tippy = "*"
 sphinxcontrib-plantuml = "0.30"
-line-profiler-pycharm = "1.2.0"
 
 furo = "*"
 livereload ="*"
@@ -24,3 +23,5 @@ livereload ="*"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# poetry export --without-hashes --format=requirements.txt > doc/requirements.txt

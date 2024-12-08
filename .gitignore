@@ -1,6 +1,5 @@
 /configuration/conf_local.yaml
-
-/doc-template/
+/old/
 /doc/build/
 
 /poetry.lock

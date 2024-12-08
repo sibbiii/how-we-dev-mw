@@ -21,13 +21,13 @@ Large enterprises nowadays mostly go the exact opposite approach for all their i
 
 You may remember that in the past, Git did not work well with large repositories. All that changed since Microsoft updated Git in late 2022. Microsoft invested significant work to make working in a large Git repository an enjoyable experience. After (partially) cloning a large repository, you never need to clone again. Modern Git fetches all new updates to this repository in the background, making long waiting times for _git fetch_ a relic of the past even when the internet connection is slow. Now that all your code is in one repo, you get atomic snapshots of your whole codebase ordered in time. This means you can go backward and forward from any point in time instantly. Using modern Git, there is no single benefit anymore to storing a monolith in multiple Git repositories instead of subfolders of a single Git repository.
 
-Software development is very opinionated on almost all matters. Especially how to work is subject to constant controversy. A single repository is no exception here. A single repository is a place for large-scale collaboration. Discipline and upholding standard processes is a must to not end in a messy workspace. Proper governance is critical here and often overlooked. Once established, however, a single repository can significantly improve quality and maintainability when required. To summarize, a single repository pays off when software consists of many components with many dependencies, teams shall have end-to-end ownership, including integrating their components, and the system is always deployed together in many configurations.
+Software development is very opinionated on almost all matters. Especially how to work is subject to constant controversy. A single repository is no exception here. A single repository is a place for large-scale collaboration. Discipline and upholding standard processes is a must to not end in a messy workspace. Proper governance is critical here and often overlooked. Once established, however, a single repository can significantly improve quality and maintainability when required. To summarize, a single repository pays off when software consists of many components with many dependencies, teams shall have end-to-end ownership, including integrating their components, and the system is always deployed together in many configurations. Notably, this is exactly our use case. 
+
+_TODO: "Mono-repos" have their downsides, so we go for a one-project repo paired with well separated dependencies imported by hash._
 
 ## Git + Artifactory is all we need
 
-Coming back to the bug that we needed to fix. Now that we have all our code in one Git repository, does checking out the correct snapshot give us an environment where we can reproduce the bug? Unfortunately not, as there is more in our environment than just code:
-
-For our daily work, this means:
+Coming back to the bug that we needed to fix. Now that we have all our code in one Git repository, does checking out the correct snapshot give us an environment where we can reproduce the bug? Unfortunately not, as there is more in our environment than just code. For our daily work, this means:
 
 ![merkle tree](img/2/merkle.png)
 
