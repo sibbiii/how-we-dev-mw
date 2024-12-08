@@ -1,8 +1,6 @@
 (develop_at_head)=
 # We continuously develop at the head of main.
 
-
-
 A significant driver of developer frustration and inefficiency is having to support and align multiple versions of units, components, and tools.
 Versions create an additional dimension of complexity in an environment that is already complex enough.
 
@@ -12,7 +10,6 @@ The de facto standard for versioning is SemVer. SemVer works well on limited sca
 
 Given a huge monolithic codebase in a single repository, our straight-forward 
 best-practice solution to conflicting component versions within this repo is to not have versions.
-
 
 Instead of creating a new version with every change of a component, __we merge all changes to the head of main__ (after being tested well, [more on that later](chap_build_before_merge)). This style of development is called "Trunk Based Development":
 
@@ -36,9 +33,9 @@ Looking at the example above, ask yourself: "What versions of component A need t
 If there are no versions, there is no need to make the different versions of A, B, and C compatible. The only thing you need to make sure is that whatever is at the head of main, is compatible. This makes things a lot easier.
 Of course, there is also a downside. A change in a component needs to be compatible with all the other dependent components already at the time of making the change. 
 This means that when you, for example, change some functionality in component A, you need to fix all the consumers of A in the same pull request, in our example, B and C. 
-Alternatively, you may use patterns such as expand and contract if the change is too large for a single pull request, [more on this later](chap_small_increments). This again fixes B and C.
+Alternatively, you may use patterns such as expand and contract if the change is too large for a single pull request, [more on this later](chap_small_increments). This fixes B and C as before, just over the course of several pull requests.
 
-Even if another team owns component B and C, they need to be fixed. Changes in A must not be merged if they break B or C. Releasing a new version of A, and leaving the change of B and C for later is not an option. This only delays the change. You will save work now, but for sure not in the long run as the longer you wait, the more cumbersome the change and all related complications will get.
+Even if another team owns component B and C, these components need to be fixed. Changes in A must not be merged if they break B or C. Releasing a new version of A, and leaving the change of B and C for later is not an option. This only delays the change. You will save work now, but for sure not in the long run as the longer you wait, the more cumbersome the change and all related complications will get.
 
 ## We shift left
 

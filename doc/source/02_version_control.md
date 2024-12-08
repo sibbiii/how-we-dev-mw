@@ -1,5 +1,5 @@
 (chap_version_control)=
-# We version control everything in one repo
+# We version control everything in one repository.
 
 The first thing we need as a software company is a place to store code, documentation, tools, infrastructure-configuration, and other artifacts, for example, test inputs. In an ideal world, we would put all this data in one version control system that stores a single unambitious snapshot of all our data. 
 
@@ -31,9 +31,9 @@ For our daily work, this means:
 
 ![merkle tree](img/2/merkle.png)
 
-1. **We store all build inputs in a single Git repository**. This includes code, tests, configuration, and infrastructure.
+1. **We version control all build inputs in a single Git repository**. This means storing there code, tests, configuration, and infrastructure-configuration.
 2. In case we need large binaries in our workspace or for our build, we serve them via Git-LFS, the build-system, or other standard means from Artifactory. Importantly, linking must be done by hash. 
-3. **We consume well-separated internal and external dependencies with stable and clearly defined interfaces by hash** from Artifactory. For example: Python, Gtest, Docker images, Python PIP packages, or Conan Packages. Linking external input by version, filename, unique id, tag, or ":latest" is not allowed, as this allows the build inputs to change, making the build potentially non-deterministic. 
+3. **We consume well-separated internal and external dependencies with stable and clearly defined interfaces by hash** from Artifactory. For example: Python, Gtest, Docker images, or Python PIP packages. Linking external input by version, filename, id, tag, or ":latest" is not allowed, as this allows the build inputs to change, making the build potentially non-deterministic. 
 4. We must not consume build inputs from systems such as Jira, MongoDB, Polarion, or any cloud service for reproducibility reasons. If required, a copy (or a link by hash to Artifactory) may be added to Git via pull request.
 5. **We use the standardized WSL** provided by our company to make the complete development environment reproducible.
 
@@ -45,11 +45,11 @@ Now that we have unambiguous snapshots, we can move on to the next step, that is
 
 We currently check out a subset of 100+ repositories for each project into a single project-specific workspace. The mapping of the services checked out to the folders in the workspace is stored in a so-called ".cccf" file. The magic of the checkout is done by a self-baked tool called "Camel."
 
-![merkle tree](img/2/folders.png)
+![folders1](img/2/folders.png)
 
 As usual, self-baked tools work reasonably well in small scenarios but run into scaling problems once the company grows. Firstly, as merging to several independent repositories is not atomic, the current workspace's checkout has lately sometimes been broken. Secondly, looking at the example in the figure above, Project 2 cannot be built with Workspace 1 checked out. Adding the folders of Project 2 to the Project 1 workspace is impossible as the config folders have the same name. So the only choice left is to check out Project 2 in addition and sync the common folders to the other project via Git, leading to a more than full hard disk once all projects need to be checked out. Fortunately, there is a much easier solution:
 
-![merkle tree](img/2/folders2.png)
+![folders2](img/2/folders2.png)
 
 We create a new _common_ workspace with a unified folder structure. We move conflicting folders into subfolders and use the opportunity to refactor the other folders' structure. The same folder structure is then put 1:1 into our new "MotionWise" repository, transforming the self-baked Camel checkout into a simple standard Git checkout identified by a single commit hash. In case not all folders are needed, a partial clone is possible with Git out of the box. 
 
