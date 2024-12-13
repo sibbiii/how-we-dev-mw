@@ -35,9 +35,9 @@ suppress_warnings = ['epub.unknown_project_files']
 # EPUB options
 epub_theme = 'epub'
 epub_theme_options = {"relbar1" : True, "footer": True}
-epub_title = 'Title MotionWise'
+epub_title = 'How we (want to) develop MotionWise'
 epub_copyright = 'TTTech Auto'
-epub_description = 'Desc MotionWise'
+epub_description = 'This is the high level guideline we (want to) follow to develop MotionWise continuously at the head of a single repository.'
 epub_cover = ('_static/cover.jpg', '')
 epub_show_urls = 'no'
 
@@ -47,7 +47,7 @@ epub_show_urls = 'no'
 html_theme = "furo"
 
 html_title = "MotionWise"
-html_short_title = "MotionWise"
+html_short_title = "How we (want to) develop MotionWise"
 html_static_path = ['_static']
 
 html_last_updated_fmt = '%B %d, %Y'
