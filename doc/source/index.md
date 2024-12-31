@@ -17,24 +17,25 @@ This guideline is work in progress. We did not include internal or confidential 
 .. toctree::
    :maxdepth: 1
 
-   Welcome to software engineering<01_welcome.md>
-   We version control everything in one repository.<02_version_control.md>
-   We continuously develop at the head of main.<03_develop_at_head.md>
-   We agree as a team to never break main.<04_never_break_main.md>
-   We build before merge.<06_build_before_merge.md>
-   If we cannot fix main fast, we revert.<05_revert.md>
+   Welcome to software engineering<welcome.md>
+   We version control everything in one repository.<version_control.md>
+   We continuously develop at the head of main.<develop_at_head.md>
+   We agree as a team to never break main.<never_break_main.md>
+   We build before merge.<build_before_merge.md>
+   If we cannot fix main fast, we revert.<revert.md>
    
-   We have a vast amount of high-quality tests.<09_tests.md>
-   We Test, Code, Test, Code, Test, Code, ...<10_tdd.md>
+   We have a vast amount of high-quality tests.<tests.md>
+   We Test, Code, Test, Code, Test, Code, ...<tdd.md>
+   We release on demand from main.<release.md>
    
-   We make changes in small increments.<07_small_increments.md>
-   We merge (something) to main daily.<11_merge_daily.md>
-   We have a "10 min" build.<12_fast_build.md>
+   We make changes in small increments.<small_increments.md>
+   We merge (something) to main daily.<merge_daily.md>
+   We have a "10 min" build.<fast_build.md>
    
-   We use a build system.<13_build_system.md>
-   We decouple the codebase.<14_decouple.md>
-   We spend time to educate ourselves.<15_educate.md>
-   To win, we invest in good architecture.<16_architecture.md>
+   We use a build system.<build_system.md>
+   We decouple the codebase.<decouple.md>
+   We spend time to educate ourselves.<educate.md>
+   To win, we invest in good architecture.<architecture.md>
 ```
 
 ## Who are we

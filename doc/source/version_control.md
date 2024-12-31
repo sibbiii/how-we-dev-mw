@@ -23,7 +23,7 @@ You may remember that in the past, Git did not work well with large repositories
 
 Software development is very opinionated on almost all matters. Especially how to work is subject to constant controversy. A single repository is no exception here. A single repository is a place for large-scale collaboration. Discipline and upholding standard processes is a must to not end in a messy workspace. Proper governance is critical here and often overlooked. Once established, however, a single repository can significantly improve quality and maintainability when required. To summarize, a single repository pays off when software consists of many components with many dependencies, teams shall have end-to-end ownership, including integrating their components, and the system is always deployed together in many configurations. Notably, this is exactly our use case. 
 
-_TODO: "Mono-repos" have their downsides, so we go for a one-project repo paired with well separated dependencies imported by hash._
+_TODO: True "Mono-repos" have their downsides, so we go for a one-project repo paired with well separated dependencies imported by hash._
 
 ## Git + Artifactory is all we need
 
@@ -31,7 +31,7 @@ Coming back to the bug that we needed to fix. Now that we have all our code in o
 
 ![merkle tree](img/2/merkle.png)
 
-1. **We version control all build inputs in a single Git repository**. This means storing there code, tests, configuration, and infrastructure-configuration.
+1. **We version control all build inputs in a single Git repository**. This means storing code, tests, documentation, configuration, and infrastructure-configuration for MotionWise Core and all dependent Customer Projects in one large Git repository.
 2. In case we need large binaries in our workspace or for our build, we serve them via Git-LFS, the build-system, or other standard means from Artifactory. Importantly, linking must be done by hash. 
 3. **We consume well-separated internal and external dependencies with stable and clearly defined interfaces by hash** from Artifactory. For example: Python, Gtest, Docker images, or Python PIP packages. Linking external input by version, filename, id, tag, or ":latest" is not allowed, as this allows the build inputs to change, making the build potentially non-deterministic. 
 4. We must not consume build inputs from systems such as Jira, MongoDB, Polarion, or any cloud service for reproducibility reasons. If required, a copy (or a link by hash to Artifactory) may be added to Git via pull request.
@@ -51,7 +51,10 @@ As usual, self-baked tools work reasonably well in small scenarios but run into 
 
 ![folders2](img/2/folders2.png)
 
-We create a new _common_ workspace with a unified folder structure. We move conflicting folders into subfolders and use the opportunity to refactor the other folders' structure. The same folder structure is then put 1:1 into our new "MotionWise" repository, transforming the self-baked Camel checkout into a simple standard Git checkout identified by a single commit hash. In case not all folders are needed, a partial clone is possible with Git out of the box. 
+We create a new _common_ workspace with a unified folder structure. We move conflicting folders into subfolders and use the opportunity to refactor the other folders' structure. The same folder structure is then put 1:1 into our new "MotionWise" repository, transforming the self-baked "Camel-checkout" into a simple standard Git-checkout identified by a single commit hash. In case not all folders are needed, a partial clone is possible with Git out of the box. 
 
 Having one unified workspace folder structure checked out from only one repository inside a standardized WSL will make our live a lot easier. In the next chapter, we will see how to update code in this workspace efficiently. 
 
+## Modern Git can handle large repositories well
+
+_TODO: Write about scalar, why .gitignore does not scale, and how few commands are needed when working with one trunk and short-lived branches._

@@ -79,12 +79,13 @@ That being said, there is a well-established industry best practice _for this pa
 How we want to achieve this (new) way of working will be explained in Chapters 2 to Chapter 16: 
 
 In short, [we version control all our product and project code (our "colonies") in folders within one repository](chap_version_control). 
-This repository has a special branch called main. [Newly developed code is always merged with the head of main](develop_at_head) starting with a fresh check-out from main. 
+This repository has a special branch called main. [Newly developed code is always merged with the head of main](chap_develop_at_head) starting with a fresh check-out from main. 
 Consequently, [we agree as a team to never break main](chap_never_break_main). 
-We achieve this by [building, that is, checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues. 
+We achieve this by [building, that is, checking our code before merging](chap_build_before_merge). In the unlikely case we missed something and cannot correct our mistake fast, [we revert](chap_revert) to the last known working state to unblock us and our colleagues.
 
 Obviously, this only works if we have a [vast number of high-quality tests](chap_tests). 
 Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
+Once we have a battery of good tests that we can rely on to keep main in a releasable state, [we release to the on demand from main](chap_release) to the customer.
 
 Fast feedback is key. This is why we [make changes in small increments](chap_small_increments) and merge them to main to see how they integrate with the other code. 
 Collaboration with team members also happens on main and not on branches. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), 
