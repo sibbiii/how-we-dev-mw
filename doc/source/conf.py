@@ -28,6 +28,8 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+nitpicky = True
+
 smartquotes_action= 'qDe'
 show_warning_types = True
 suppress_warnings = ['epub.unknown_project_files']

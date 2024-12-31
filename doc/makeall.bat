@@ -1,3 +1,12 @@
+@echo off
+for /l %%x in (1, 1, 10) do echo.
+echo ---------------------------------------
+for /l %%x in (1, 1, 10) do echo.
+
 call make epub
+if %errorlevel% neq 0 exit /b %errorlevel%
 call make html
-copy build\epub\HowwedevelopMotionWise.epub ..\"How we develop MotionWise (public).epub"
+if %errorlevel% neq 0 exit /b %errorlevel%
+
+echo.
+echo --- all ok ---

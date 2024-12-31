@@ -1,7 +1,7 @@
 /configuration/conf_local.yaml
 /old/
+/temp/
 /doc/build/
 
 /poetry.lock
 
-/How we develop MotionWise (public).epub
