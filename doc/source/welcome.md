@@ -85,7 +85,7 @@ We achieve this by [building, that is, checking our code before merging](chap_bu
 
 Obviously, this only works if we have a [vast number of high-quality tests](chap_tests). 
 Such tests cannot be created after coding has been done. They need to be created iteratively while coding, either test first or code first, [then test, then code, and so on in small two-minute cycles](chap_tdd). 
-Once we have a battery of good tests that we can rely on to keep main in a releasable state, [we release to the on demand from main](chap_release) to the customer.
+Once we have a battery of good tests that we can rely on to keep main in a releasable state, [we release on demand from main](chap_release) to the customer.
 
 Fast feedback is key. This is why we [make changes in small increments](chap_small_increments) and merge them to main to see how they integrate with the other code. 
 Collaboration with team members also happens on main and not on branches. When a build takes days to complete, merging to main frequently becomes a pain. Thus, we go to great lengths to [achieve a 10-minute build](chap_fast_build), 
