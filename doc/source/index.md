@@ -1,4 +1,4 @@
-# How we (want to) develop software
+# How we (want to) develop software at scale
 
 ![Welcome](img/home.jpg)
 
