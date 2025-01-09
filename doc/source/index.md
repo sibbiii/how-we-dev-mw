@@ -17,7 +17,7 @@ This guideline is work in progress. We did not include internal or confidential 
 .. toctree::
    :maxdepth: 1
 
-   Welcome to software engineering<welcome.md>
+   Welcome to software engineering.<welcome.md>
    We version control everything in one repository.<version_control.md>
    We continuously develop at the head of main.<develop_at_head.md>
    We agree as a team to never break main.<never_break_main.md>
@@ -40,7 +40,7 @@ This guideline is work in progress. We did not include internal or confidential 
 
 ## Who are we
 
-[TTTech Auto](https://www.tttech-auto.com/) is a leading platform product and service provider focusing on system, safety, and security for the software-defined vehicle. "[MotionWise](https://www.tttech-auto.com/software-products/motionwise-safety-middleware)" is our next-generation safety middleware solution to provide a safe and deterministic execution environment for mixed-criticality software applications. With our headquarters in Vienna and subsidiaries in Spain, Germany, Serbia, and Croatia, we are always searching for excellent engineering potential. Feel free to apply in case you are looking for one of the most incredible places to work on safety-critical embedded-software.
+_In Jan 2025, TTTech Auto was acquired by NXP Semiconductors N.V._ [TTTech Auto](https://www.tttech-auto.com/) is a leading platform product and service provider focusing on system, safety, and security for the software-defined vehicle. "[MotionWise](https://www.tttech-auto.com/software-products/motionwise-safety-middleware)" is our next-generation safety middleware solution to provide a safe and deterministic execution environment for mixed-criticality software applications. With our headquarters in Vienna and subsidiaries in Spain, Germany, Serbia, Croatia, and Turkey, we are always searching for excellent engineering potential. Feel free to apply in case you are looking for one of the most incredible places to work on safety-critical embedded-software.
 
 ## Disclaimer
 

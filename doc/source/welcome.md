@@ -1,4 +1,4 @@
-# Welcome to software engineering
+# Welcome to software engineering.
 
 Writing new code is easy. 
 We all learned how to write small programs at the university, at our previous internship, or by ourselves. 
