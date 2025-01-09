@@ -47,7 +47,7 @@ The total amount of work to be done remains the same. We just do it earlier in t
 
 _work in progress, to be continued..._
 
-[comment]: # (Changes in MotionWise propagate instantly to Customer projects leading to an order of magnitudes reduced lead time.)
+[comment]: # (Changes in software propagate instantly to Customer projects leading to an order of magnitudes reduced lead time.)
 
 ## We collaborate on main
  
