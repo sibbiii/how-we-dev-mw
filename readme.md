@@ -11,8 +11,8 @@ We did not include internal or confidential\
 information on purpose. 
 
 You can download it 
-- in .epub format [here](https://how-we-dev-mw.readthedocs.io/_/downloads/en/latest/epub/)
-- or read it as .html [public link](https://how-we-dev-mw.readthedocs.io), [internal link](https://documentation.tttech-auto.com/cx_mw/).
+- in .epub format [here](https://how-we-dev-sw.readthedocs.io/_/downloads/en/latest/epub/)
+- or read it as .html [public link](https://how-we-dev-sw.readthedocs.io), [internal link](https://documentation.tttech-auto.com/cx_mw/).
 
 ## Contributing
 

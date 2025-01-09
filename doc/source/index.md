@@ -5,10 +5,10 @@
 Welcome to the high-level guideline we (want to) follow to develop software continuously at the head of a single repository.
 
 ```{only} epub
-This e-book is work in progress. We did not include internal or confidential information on purpose. Feel free to read it also as webpage [here](https://how-we-dev-mw.readthedocs.io/).  
+This e-book is work in progress. We did not include internal or confidential information on purpose. Feel free to read it also as webpage [here](https://how-we-dev-sw.readthedocs.io/).  
 ```
 ```{only} not epub
-This guideline is work in progress. We did not include internal or confidential information on purpose. Feel free to read it in .epub format on your favorite ebook reader [(DOWNLOAD)](https://how-we-dev-mw.readthedocs.io/_/downloads/en/latest/epub/). 
+This guideline is work in progress. We did not include internal or confidential information on purpose. Feel free to read it in .epub format on your favorite ebook reader [(DOWNLOAD)](https://how-we-dev-sw.readthedocs.io/_/downloads/en/latest/epub/). 
 ```
 
 ## Table of contents
