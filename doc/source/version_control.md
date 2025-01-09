@@ -17,7 +17,7 @@ Now, things get tricky. Our code is not stored in one Git repository. We store o
 
 Poly-repos would make sense if we had numerous _independent_ teams with clearly separated responsibilities plus well-defined and stable interfaces. Then, each team could work in isolation in their own "mono-repo". This way of working is common in the open-source world nowadays for good reasons. 
 
-Large enterprises nowadays mostly go the exact opposite approach for all their internal code: _One_ repository per product. In our case, **one Git repository for MotionWise 2.0 and all customer projects based on it**. This obviously by itself does not make the code better, but having all code together eases the large scale refactorings needed to structure and modularize code. 
+Large enterprises nowadays mostly go the exact opposite approach for all their internal code: _One_ repository per product. In our case, **one Git repository for our a product and all customer projects based on it**. This obviously by itself does not make the code better, but having all code together eases the large scale refactorings needed to structure and modularize code. 
 
 You may remember that in the past, Git did not work well with large repositories. All that changed since Microsoft updated Git in late 2022. Microsoft invested significant work to make working in a large Git repository an enjoyable experience. After (partially) cloning a large repository, you never need to clone again. Modern Git fetches all new updates to this repository in the background, making long waiting times for _git fetch_ a relic of the past even when the internet connection is slow. Now that all your code is in one repo, you get atomic snapshots of your whole codebase ordered in time. This means you can go backward and forward from any point in time instantly. Using modern Git, there is no single benefit anymore to storing a monolith in multiple Git repositories instead of subfolders of a single Git repository.
 
@@ -31,7 +31,7 @@ Coming back to the bug that we needed to fix. Now that we have all our code in o
 
 ![merkle tree](img/2/merkle.png)
 
-1. **We version control all build inputs in a single Git repository**. This means storing code, tests, documentation, configuration, and infrastructure-configuration for MotionWise Core and all dependent Customer Projects in one large Git repository.
+1. **We version control all build inputs in a single Git repository**. This means storing code, tests, documentation, configuration, and infrastructure-configuration for a product and all dependent customer projects in one large Git repository.
 2. In case we need large binaries in our workspace or for our build, we serve them via Git-LFS, the build-system, or other standard means from Artifactory. Importantly, linking must be done by hash. 
 3. **We consume well-separated internal and external dependencies with stable and clearly defined interfaces by hash** from Artifactory. For example: Python, Gtest, Docker images, or Python PIP packages. Linking external input by version, filename, id, tag, or ":latest" is not allowed, as this allows the build inputs to change, making the build potentially non-deterministic. 
 4. We must not consume build inputs from systems such as Jira, MongoDB, Polarion, or any cloud service for reproducibility reasons. If required, a copy (or a link by hash to Artifactory) may be added to Git via pull request.
@@ -51,7 +51,7 @@ As usual, self-baked tools work reasonably well in small scenarios but run into 
 
 ![folders2](img/2/folders2.png)
 
-We create a new _common_ workspace with a unified folder structure. We move conflicting folders into subfolders and use the opportunity to refactor the other folders' structure. The same folder structure is then put 1:1 into our new "MotionWise" repository, transforming the self-baked "Camel-checkout" into a simple standard Git-checkout identified by a single commit hash. In case not all folders are needed, a partial clone is possible with Git out of the box. 
+We create a new _common_ workspace with a unified folder structure. We move conflicting folders into subfolders and use the opportunity to refactor the other folders' structure. The same folder structure is then put 1:1 into our new "product" repository, transforming the self-baked "Camel-checkout" into a simple standard Git-checkout identified by a single commit hash. In case not all folders are needed, a partial clone is possible with Git out of the box. 
 
 Having one unified workspace folder structure checked out from only one repository inside a standardized WSL will make our live a lot easier. In the next chapter, we will see how to update code in this workspace efficiently. 
 

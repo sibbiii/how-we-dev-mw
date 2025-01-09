@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "How we (want to) develop MotionWise"
+name = "How we (want to) develop Software"
 version = "0.1.0"
 description = "This is a high level description of the processes we want to follow."
 authors = ["Sebastian Caban <sebastian.caban@tttech.com>"]

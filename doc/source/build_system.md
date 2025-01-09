@@ -10,12 +10,12 @@ Bazel
 - **is fast**: do not build things twice if they have already been built somewhere else
 - **is correct**: the output faithfully reflects the state of its transitive inputs (hermetic, reproducible, deterministic build analysis and action execution)
 - benefits from good architecture and thus guides in that direction
-- is widely used by projects of the size of MotionWise
+- is widely used by projects of the size we have
 - was explicitly developed for large complex codebases
 - has a proven track record even in the automotive environment (BMW)
 - has external support from consulting companies and tooling for remote execution, caching, and reporting.
 
-We as TTTech have decided to switch to Bazel as our sole build system for Motionwise to 
+We as TTTech have decided to switch to Bazel as our sole build system for our software to 
 - enhance the developer experience 
 - reduce feature development time
 - increase delivery quality

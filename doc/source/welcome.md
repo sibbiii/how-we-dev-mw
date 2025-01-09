@@ -58,7 +58,7 @@ There is no one-fits-all recipe for software engineering.
 The best-practice target picture for open-source projects with sporadic contributors (the kind of environment you might be most familiar with) is different from the target picture of large enterprise setups with hundreds of full-time employees.
 Still, we do not need to be like Netflix with its microservices or Google with its gigantic mono repo and custom tooling. 
 
-For MotionWise, we are __more than 300 full-time developers__. 
+We are __more than 300 full-time developers__. 
 We __trust each other__. This setup differs from open-source development where long-time branching is inevitable and developers need to review code from untrusted, potentially malicious contributors. 
 
 Our __30+ million lines codebase__ is monolithic and full of legacy.

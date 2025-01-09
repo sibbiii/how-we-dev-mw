@@ -1,8 +1,8 @@
-# How we (want to) develop MotionWise
+# How we (want to) develop software
 
 ![Welcome](img/home.jpg)
 
-Welcome to the high-level guideline we (want to) follow to develop MotionWise continuously at the head of a single repository.
+Welcome to the high-level guideline we (want to) follow to develop software continuously at the head of a single repository.
 
 ```{only} epub
 This e-book is work in progress. We did not include internal or confidential information on purpose. Feel free to read it also as webpage [here](https://how-we-dev-mw.readthedocs.io/).  
