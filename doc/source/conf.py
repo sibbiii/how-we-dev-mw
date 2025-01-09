@@ -7,7 +7,7 @@ from operator import truediv
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'How we (want to) develop software'
+project = 'How we (want to) develop software at scale'
 author = 'Sebastian Caban'
 release = '1'
 version = '1.1'
@@ -37,7 +37,7 @@ suppress_warnings = ['epub.unknown_project_files']
 # EPUB options
 epub_theme = 'epub'
 epub_theme_options = {"relbar1" : True, "footer": True}
-epub_title = 'How we (want to) develop software'
+epub_title = 'How we (want to) develop software at scale'
 epub_copyright = 'TTTech Auto'
 epub_description = 'This is the high level guideline we (want to) follow to develop software continuously at the head of a single repository.'
 epub_cover = ('_static/cover.jpg', '')
@@ -48,8 +48,8 @@ epub_show_urls = 'no'
 
 html_theme = "furo"
 
-html_title = "SW at scale"
-html_short_title = "How we (want to) develop software"
+html_title = "SW at Scale"
+html_short_title = "How we (want to) develop software at scale"
 html_static_path = ['_static']
 
 html_last_updated_fmt = '%B %d, %Y'

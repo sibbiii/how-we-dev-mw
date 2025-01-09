@@ -35,10 +35,10 @@
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Drop Shadow"
        id="filter31"
-       x="-0.0022563458"
-       y="-0.0097030521"
-       width="1.0078308"
-       height="1.0336753">
+       x="-0.0026396167"
+       y="-0.0065341661"
+       width="1.009161"
+       height="1.0226774">
       <feFlood
          result="flood"
          in="SourceGraphic"
@@ -95,13 +95,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.10243055"
-     inkscape:cx="3651.2543"
-     inkscape:cy="2430.9153"
+     inkscape:zoom="0.14485867"
+     inkscape:cx="3037.4433"
+     inkscape:cy="2191.7914"
      inkscape:window-width="1920"
-     inkscape:window-height="1028"
-     inkscape:window-x="-6"
-     inkscape:window-y="-6"
+     inkscape:window-height="1000"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="g1"
      showgrid="false" />
@@ -130,7 +130,7 @@
        x="159.70543"
        y="1487.0082"
        id="text1"
-       transform="matrix(0.94910772,0,0,0.94910772,8.6410135,37.283797)"><tspan
+       transform="matrix(0.94910772,0,0,0.94910772,8.6410135,-245.75069)"><tspan
          sodipodi:role="line"
          id="tspan1"
          x="159.70543"
@@ -140,7 +140,12 @@
          x="159.70543"
          y="1973.5369"
          id="tspan2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:389.223px;font-family:Cambria;-inkscape-font-specification:'Cambria Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#28220b;stroke-width:3.24353">develop software</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:389.223px;font-family:Cambria;-inkscape-font-specification:'Cambria Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#28220b;stroke-width:3.24353">develop software</tspan><tspan
+         sodipodi:role="line"
+         x="159.70543"
+         y="2460.0657"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:389.223px;font-family:Cambria;-inkscape-font-specification:'Cambria Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#28220b;stroke-width:3.24353"
+         id="tspan3">at scale</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:177.882px;font-family:Cambria;-inkscape-font-specification:'Cambria, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#28220b;fill-opacity:1;stroke-width:1.48235"
@@ -152,15 +157,5 @@
          y="2389.4963"
          id="tspan2-7"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:177.882px;font-family:Cambria;-inkscape-font-specification:'Cambria, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#28220b;stroke-width:1.48235">Sebastian Caban et al.</tspan></text>
-    <g
-       id="g1-2"
-       transform="translate(1824.0146,-157.773)">
-      <path
-         d="m 0,0 h 19.624 v 60.742 c 0,21.961 12.382,34.81 32.474,34.81 18.69,0 29.203,-12.148 29.203,-34.109 V 0 h 19.624 v 62.378 c 0,30.838 -17.054,51.163 -46.958,51.163 -17.055,0 -28.269,-7.943 -34.343,-15.419 v 50.696 H 0 Z m -738.484,95.085 h 91.113 V 4.205 h 18.69 v 86.441 l -23.362,23.362 h -86.441 z m 58.873,66.582 61.209,-61.209 h 33.175 l 61.209,61.209 -13.316,13.317 -64.48,-64.246 -64.247,64.246 z m 65.181,-185.263 h 18.923 v 91.113 h 91.114 v 18.69 h -86.441 L -614.43,62.845 Z m 173.349,53.5 C -441.081,9.111 -431.736,0 -408.841,0 h 23.128 v 17.989 h -23.128 c -9.345,0 -12.616,3.738 -12.616,11.915 V 94.15 h 35.511 v 18.223 h -35.511 v 36.445 h -19.624 z m 69.152,0 C -371.929,9.111 -362.584,0 -339.689,0 h 23.129 v 17.989 h -23.129 c -9.345,0 -12.615,3.738 -12.615,11.915 V 94.15 h 35.51 v 18.223 h -35.51 v 36.445 h -19.625 z m 131.764,26.166 c 0,-34.343 21.96,-57.238 53.733,-57.238 24.765,0 43.922,11.915 50.463,36.679 h -20.092 c -5.373,-14.251 -16.353,-19.157 -30.371,-19.157 -18.69,0 -31.773,12.148 -33.641,34.342 h 86.674 c 0.233,1.402 0.467,3.972 0.467,5.374 0,34.576 -21.961,57.471 -53.5,57.471 -31.773,0 -53.733,-22.895 -53.733,-57.471 m 20.792,11.447 c 3.505,18.924 15.653,28.502 32.941,28.502 17.055,0 29.904,-9.578 33.409,-28.502 z m 99.991,-11.447 c 0,-33.876 21.727,-57.238 53.734,-57.238 27.334,0 46.257,16.12 50.929,40.884 h -20.558 c -3.504,-14.952 -14.485,-23.362 -30.371,-23.362 -20.326,0 -33.642,14.718 -33.642,39.949 0,24.998 13.316,39.716 33.642,39.716 16.12,0 26.867,-8.41 30.371,-23.596 h 20.558 c -4.672,24.998 -23.595,41.118 -50.929,41.118 -32.007,0 -53.734,-23.362 -53.734,-57.471 m 280.582,0 c 0,-33.876 22.895,-57.238 55.836,-57.238 16.12,0 28.035,5.607 35.978,15.419 L 254.182,0 h 17.756 v 112.373 h -17.756 l -1.168,-14.251 c -7.943,9.812 -19.858,15.419 -35.978,15.419 -32.941,0 -55.836,-23.362 -55.836,-57.471 m 20.092,0.233 c 0,24.998 14.718,39.716 35.744,39.716 21.026,0 35.745,-14.718 35.745,-39.716 0,-25.231 -14.719,-39.949 -35.745,-39.949 -21.026,0 -35.744,14.718 -35.744,39.949 m 111.672,-6.308 c 0,-30.838 14.251,-51.163 45.089,-51.163 17.989,0 28.736,7.242 35.044,15.653 L 374.732,0 h 17.755 V 112.373 H 372.863 V 51.631 c 0,-21.961 -12.382,-34.81 -31.773,-34.81 -18.69,0 -28.502,12.148 -28.502,34.109 v 61.443 h -19.624 z m 185.473,6.075 c 0,-33.876 22.896,-57.238 55.836,-57.238 32.941,0 55.837,23.362 55.837,57.238 0,34.109 -22.896,57.471 -55.837,57.471 -32.94,0 -55.836,-23.362 -55.836,-57.471 m 20.092,0.233 c 0,24.998 14.718,39.716 35.744,39.716 21.027,0 35.745,-14.718 35.745,-39.716 0,-25.231 -14.718,-39.949 -35.745,-39.949 -21.026,0 -35.744,14.718 -35.744,39.949 M -302.776,29.904 C -302.776,9.111 -293.431,0 -270.536,0 h 23.129 v 17.989 h -23.129 c -9.345,0 -12.616,3.738 -12.616,11.915 V 94.15 h 35.511 v 18.223 h -35.511 v 36.445 h -19.624 z m 717.925,0 C 415.149,9.111 424.494,0 447.389,0 h 23.129 v 17.989 h -23.129 c -9.345,0 -12.616,3.738 -12.616,11.915 V 94.15 h 35.511 v 18.223 h -35.511 v 36.445 h -19.624 z"
-         id="path1"
-         fill="#231f20"
-         clip-path="url(#clipPath2)"
-         transform="matrix(1.33333,0,0,-1.33333,1296.77,498.085)" />
-    </g>
   </g>
 </svg>
